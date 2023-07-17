@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(loop_rift)
 
-add_compile_options(-std=c++11)
-add_compile_options(-std=gnu++11)
+add_compile_options(-std=c++17)
+add_compile_options(-std=gnu++17)
 
-set(OpenCV_DIR '/opt/ros/kinetic/share/OpenCV-3.3.1-dev/')
+# set(OpenCV_DIR '/opt/ros/kinetic/share/OpenCV-3.3.1-dev/')
 set(CMAKE_BUILD_TYPE release)
 
 
