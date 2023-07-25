@@ -106,13 +106,13 @@ int main(int argc, char **argv)
     std::cout << "Read PointClouds\n";
 
     // apply rotation transform to test the rotation invariance
-    // float rotation_angle = 137.0 / 180 * CV_PI;
-    // for (auto &point : point_cloud1)
-    // {
-    //     Eigen::Vector3d tmp(point);
-    //     point.x() = std::cos(rotation_angle) * tmp.x() + std::sin(rotation_angle) * tmp.y();
-    //     point.y() = -std::sin(rotation_angle) * tmp.x() + std::cos(rotation_angle) * tmp.y();
-    // }
+    float rotation_angle = 137.0 / 180 * CV_PI;
+    for (auto &point : point_cloud1)
+    {
+        Eigen::Vector3d tmp(point);
+        point.x() = std::cos(rotation_angle) * tmp.x() + std::sin(rotation_angle) * tmp.y();
+        point.y() = -std::sin(rotation_angle) * tmp.x() + std::cos(rotation_angle) * tmp.y();
+    }
 
     cv::Mat img1, img2;
     int max_x1, max_y2, max_x2, max_y1; // used for localizing the center of the images

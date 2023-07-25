@@ -25,15 +25,15 @@ int readPointCloud(std::vector<Eigen::Vector3d> &point_cloud_downsampled, const 
         std::vector<float> tmp;
         while (1)
         {
-            short s;
-            binfile.read((char *)&s, sizeof(short));
+            double s;
+            binfile.read((char *)&s, sizeof(double));
             if (binfile.eof())
                 break;
-            auto x = s * 0.005;
-            binfile.read((char *)&s, sizeof(short));
-            auto y = s * 0.005;
-            binfile.read((char *)&s, sizeof(short));
-            auto z = s * 0.005;
+            auto x = s;
+            binfile.read((char *)&s, sizeof(double));
+            auto y = s;
+            binfile.read((char *)&s, sizeof(double));
+            auto z = s;
 
             point_cloud_downsampled.emplace_back(Eigen::Vector3d(x, y, z));
         }
